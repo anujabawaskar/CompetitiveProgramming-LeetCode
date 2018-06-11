@@ -10,7 +10,8 @@
 class Solution {
     public int findBottomLeftValue(TreeNode root) {
         int answer = 0;
-        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        Queue<TreeNode> q = new LinkedList<TreeNode>(); 
+        //cannot use recursion with root.left as we won't necessarily reach the last row. Use BFS is needed.
         q.add(root);
         while(!q.isEmpty()) {
             int size = q.size();
