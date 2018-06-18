@@ -1,0 +1,29 @@
+// Java program for solution of 
+// friends pairing problem
+import java.io.*;
+
+class GFG 
+{
+	
+	// Returns count of ways n people
+	// can remain single or paired up.
+	static int countFriendsPairings(int n)
+	{
+		int[] dp = new int[n + 1];
+		for(int i = 0; i <= n; i++) {
+		    if(i < 3)
+		        dp[i] = i;
+		    else
+		        dp[i] = dp[i - 1] + (i - 1) * dp[i - 2];
+		}
+		return dp[n];
+	}
+	
+	// Driver code
+	public static void main (String[] args)
+	{
+		int n = 4;
+		System.out.println (countFriendsPairings(n));
+	
+	}
+}
