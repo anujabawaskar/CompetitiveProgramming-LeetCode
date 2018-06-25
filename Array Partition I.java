@@ -1,0 +1,9 @@
+class Solution {
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);  //sorting the array makes the condition true, check proof
+        int result = 0;
+        for(int i = 0; i < nums.length; i += 2)
+            result = result + nums[i];
+        return result;
+    }
+}
